@@ -17,7 +17,9 @@
 
 #include <Adafruit_PWMServoDriver.h>
 #include <Wire.h>
-#if defined(ARDUINO_SAM_DUE)
+#if defined(ESP8266)
+   #define WIRE Wire
+#elif defined(ARDUINO_SAM_DUE)
  #define WIRE Wire1
 #else
  #define WIRE Wire
